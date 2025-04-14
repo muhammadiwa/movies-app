@@ -19,14 +19,14 @@ class Migration(migrations.Migration):
                 ('description', models.TextField()),
                 ('imgPath', models.CharField(max_length=255)),
                 ('duration', models.IntegerField()),
-                ('genre', models.JSONField()),
-                ('language', models.CharField(max_length=50)),
+                ('genre', models.CharField(max_length=255)),  # Changed from JSONField to CharField
+                ('language', models.CharField(max_length=100)),
                 ('mpaa_rating_type', models.CharField(max_length=10)),
-                ('mpaa_rating_label', models.CharField(blank=True, max_length=100)),
-                ('user_rating', models.CharField(max_length=1)),
+                ('mpaa_rating_label', models.CharField(max_length=100)),
+                ('user_rating', models.FloatField()),  # Changed from CharField to FloatField
             ],
             options={
-                'ordering': ['id'],
+                'ordering': ['name'],
             },
         ),
     ]
