@@ -1,0 +1,31 @@
+django-movie-app/
+│
+├── movie_app/              # Main project settings
+│   ├── settings.py         # Project configuration
+│   ├── urls.py             # Main URL routing
+│   └── wsgi.py             # WSGI configuration
+│
+├── movies/                 # Movies application
+│   ├── models.py           # Movie data model
+│   ├── views.py            # View functions
+│   ├── urls.py             # URL patterns for movies app
+│   ├── admin.py            # Admin interface configuration
+│   ├── migrations/         # Database migrations
+│   └── management/         # Custom management commands
+│       └── commands/
+│           └── import_movies.py  # Command to import movies from JSON
+│
+├── templates/              # HTML templates
+│   ├── base.html           # Base template with common structure
+│   └── movies/
+│       ├── movie_list.html # Template for movie listing
+│       └── movie_detail.html # Template for movie details
+│
+├── static/                 # Static files
+│   ├── css/
+│   │   └── styles.css      # CSS styles
+│   └── js/
+│       └── search.js       # JavaScript for search functionality
+│
+├── movies.json             # Sample movie data in JSON format
+└── manage.py               # Django command-line utility

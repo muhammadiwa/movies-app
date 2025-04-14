@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ movie.name }} - Movie Listings @ GV Cinema{% endblock %}
+
+{% block header_content %}
+<div class="back-link">
+    <a href="{% url 'movie_list' %}">Back</a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="movie-detail">
+    <h2>{{ movie.name }}</h2>
+    <p class="mpaa-rating">({{ movie.mpaa_rating_type }}{% if movie.mpaa_rating_label %}: {{ movie.mpaa_rating_label }}{% endif %})</p>
+    
+    <div class="movie-content">
+        <div class="movie-poster">
+            <img src="{{ movie.imgPath }}" alt="{{ movie.name }}">
+        </div>
+        
+        <div class="movie-info">
+            <h3>Details</h3>
+            <p><strong>Genre:</strong> {{ movie.get_genres|join:", " }}</p>
+            <p><strong>Language:</strong> {{ movie.language }}</p>
+            <p><strong>Duration:</strong> {{ movie.duration }} minutes</p>
+            <p><strong>User Rating:</strong> {{ movie.user_rating }}</p>
+            
+            <h3>Synopsis</h3>
+            <p class="synopsis">{{ movie.description|safe }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

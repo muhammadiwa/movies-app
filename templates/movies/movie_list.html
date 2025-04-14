@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Movie Listings @ GV Cinema{% endblock %}
+
+{% block header_content %}
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search movies...">
+</div>
+{% endblock %}
+
+{% block content %}
+<h2>Popular Movies this month</h2>
+
+<div class="movie-grid" id="movie-container">
+    {% for movie in movies %}
+    <div class="movie-card">
+        <a href="{% url 'movie_detail' movie.id %}">
+            <img src="{{ movie.imgPath }}" alt="{{ movie.name }}">
+            <h3>{{ movie.name }}</h3>
+            <p class="duration">{{ movie.duration }} min</p>
+            <p class="rating">User Rating: {{ movie.user_rating }}</p>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/static/js/search.js"></script>
+{% endblock %}
