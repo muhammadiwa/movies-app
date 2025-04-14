@@ -52,8 +52,8 @@ django-movie-app/
 
 1. Clone the repository:
    ```
-   git clone <repository-url>
-   cd django-movie-app
+   git clone https://github.com/muhammadiwa/movies-app.git
+   cd movies-app
    ```
 
 2. Create a virtual environment and activate it:
